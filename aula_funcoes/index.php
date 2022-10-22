@@ -63,4 +63,4 @@ function ponteciacao($num)
 
 // echo ponteciacao(16) . "<br>";
 // echo ponteciacao(123) . "<br>";
-// echo ponteciacao(2) . "<br>";
+// echo ponteciacao(2) . "<br>"
