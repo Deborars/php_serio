@@ -57,3 +57,5 @@ if ($postArray) {
 </div>';
   }
 }
+
+var_dump(phpinfo());
