@@ -1,0 +1,19 @@
+{
+    "name": "drosado/4-aula_poo",
+    "description": "test composer",
+    "type": "library",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Drosado\\4AulaPoo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Debora Silva",
+            "email": "test@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
