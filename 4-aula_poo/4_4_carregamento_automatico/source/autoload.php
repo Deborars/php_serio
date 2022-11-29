@@ -8,9 +8,9 @@ spl_autoload_register(
     $baseDir = __DIR__ . "/"; //eu tenho o caminho absoluto até chegar no meu arquivo autoload
     $len = strlen($namespace);
 
-    if (strcmp($namespace, $class, $len) !== 0) {
-      return;
-    }
+    // if (strcmp($namespace, $class, $len) !== 0) {
+    //   return;
+    // }
 
     //será removido o fornecedor source e mantido o namespace e a classe
     $relativeClass = substr($class, $len);
@@ -18,9 +18,10 @@ spl_autoload_register(
     // var_dump($relativeClass);
 
     var_dump($class, $namespace, $baseDir);
-    $file = $baseDir . str_replace("\\", "/", $relativeClass) . "php";
+    $file = $baseDir . str_replace("\\", "/", $relativeClass) . ".php";
     if (file_exists($file)) {
       require $file;
+      var_dump($file);
     }
   }
 );
