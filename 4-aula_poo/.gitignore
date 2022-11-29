@@ -1,0 +1,4 @@
+vendor/phpmailer
+vendor/composer/installed.json
+vendor/composer/installed.php
+composer.lock
