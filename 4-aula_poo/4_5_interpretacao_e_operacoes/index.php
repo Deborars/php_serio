@@ -3,8 +3,10 @@
 require_once __DIR__ . "/source/Interpretation/User.php";
 
 
-$debora = new \Source\Intepretation\User;
+$debora = new \Source\Intepretation\User('Debora', 'Silva', 'email@email.com');
+$ester =  clone ($debora);
 
-$debora->setFirstName('Debora');
+$ester->setFirstName = 'Ester';
+$ester->setLastName = 'Israel';
 
-echo 'olá ' . $debora->getFirstName();
+var_dump([$debora, $ester]);
