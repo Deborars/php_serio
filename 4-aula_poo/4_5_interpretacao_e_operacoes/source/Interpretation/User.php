@@ -10,12 +10,12 @@ class User
 
   public function getFirstName()
   {
-    return $this->firstName;
+    return $this->firstNam;
   }
 
   public function setFirstName($firstName)
   {
-    $this->firstName = $firstName;
+    $this->firstNam = $firstName;
   }
 
   public function getLastName()
