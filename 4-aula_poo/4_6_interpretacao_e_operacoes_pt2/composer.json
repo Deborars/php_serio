@@ -1,0 +1,21 @@
+{
+    "name": "drosado/4_6_interpretacao_e_operacoes_pt2",
+    "description": "estudos",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Drosado\\46InterpretacaoEOperacoesPt2\\": "src/"
+        },
+        "classmap": [
+            "source"
+        ]
+    },
+    "authors": [
+        {
+            "name": "teste",
+            "email": "teste@teste.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
