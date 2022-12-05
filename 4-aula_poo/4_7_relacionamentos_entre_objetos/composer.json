@@ -1,0 +1,21 @@
+{
+    "name": "drosado/4_7_relacionamentos_entre_objetos",
+    "description": "testes sobre relacionamentos entre objetos",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Drosado\\47RelacionamentosEntreObjetos\\": "src/"
+        },
+        "classmap": [
+            "Source/Related"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Teste",
+            "email": "teste@teste.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
