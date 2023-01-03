@@ -9,7 +9,7 @@ class Event
   private $price;
 
   private $register;
-  private $vacancies;
+  protected $vacancies;
 
 
   /***
@@ -36,9 +36,9 @@ class Event
   {
     if ($this->vacancies >= 1) {
       $this->vacancies -= 1;
-      echo "<p class='alert alert-success'>Parabéns {$fullname}, vaga garantida!</p>";
+      echo "<p class='alert alert-success'>Parabéns {$fullname}, vaga garantida. No evento {$this->event}!</p>";
     } else {
-      echo "<p class='alert alert-danger'>Desculpe {$fullname}, mas as vagas esgostaram!</p>";
+      echo "<p class='alert alert-danger'>Desculpe {$fullname}, mas as vagas esgostaram para o evento de {$this->event}!</p>";
     }
   }
 
