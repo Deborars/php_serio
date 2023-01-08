@@ -6,15 +6,15 @@ use Source\App\Trigger;
 use Source\App\User;
 
 
-class Account
+abstract class Account
 {
-  private $branch; //agencia
-  private $account;
-  private $client;
-  private $balance; //saldo
+  protected $branch; //agencia
+  protected $account;
+  protected $client;
+  protected $balance; //saldo
 
 
-  public function __construct($branch, $account, User $client, $balance)
+  protected function __construct($branch, $account, User $client, $balance)
   {
     $this->branch = $branch;
     $this->account = $account;
@@ -28,8 +28,11 @@ class Account
     Trigger::show("EXTRATO: saldo atual: {$this->toBrl($this->balance)}", $extract);
   }
 
-  public function toBrl($value)
+  protected function toBrl($value)
   {
     return "R$ " . number_format($value, "2", ",", ".");
   }
+
+  abstract public function deposit($value);
+  abstract public function withdrawal($value);
 }
