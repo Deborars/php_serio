@@ -24,7 +24,7 @@ class Trigger
     //in_array vai verificar a partir do array das constantes sucess, warning...se uma delas foi passada
     //no errortype
     self::$errorType = (!empty($errorType) && in_array($errorType, $errorTypes) ? $errorType : "dark");
-    self::$error = "<p class='" . self::TRIGGER . " ALERT-" . self::$errorType . "'>" . self::$message . "</p>";
+    self::$error = "<p class='" . self::TRIGGER . " " . self::$errorType . "'>" . self::$message . "</p>";
   }
 
   public static function show($message, $errorType = null)
