@@ -1,7 +1,7 @@
 <?php
 
-try {
-  throw new Exception("erro");
-} catch (Exception $exception) {
-  echo $exception->getMessage();
-}
+require_once("source/Database/Connect.php");
+
+use Source\Database\Connect;
+
+$conn = Connect::getInstance();
