@@ -34,8 +34,13 @@ abstract class Model
   }
 
 
-  protected function read()
+  protected function read(string $select, string $params = null)
   {
+    try {
+    } catch (\PDOException $exception) {
+      $this->fail = $exception;
+      return null;
+    }
   }
 
   protected function update()

@@ -15,8 +15,9 @@ class UserModel extends Model
   {
   }
 
-  public function load($id)
+  public function load(int $id, string $columns = "*")
   {
+    $load = $this->read("SELECT {$columns} FROM " . self::$entity . "WHERE id =:id", "id={$id}");
   }
 
   public function find($email)
