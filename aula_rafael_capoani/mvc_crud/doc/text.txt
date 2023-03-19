@@ -1,0 +1,8 @@
+https://marketplace.visualstudio.com/items?itemName=TheUMLetTeam.umlet
+UMLet -- Free UML Tool for Fast UML Diagrams
+umlet.com -- info@umlet.com -- patreon.com/umlet
+
+
+
+>> For a new diagram, create an empty text file with a ".uxf"-extension! <<
+
