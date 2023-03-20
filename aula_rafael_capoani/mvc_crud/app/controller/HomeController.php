@@ -4,6 +4,7 @@ class HomeController
 {
   public function index()
   {
-    echo 'oi';
+    // echo 'oi';
+    Postagem::selecionaTodos();
   }
 }

@@ -2,6 +2,7 @@
 require_once("app/core/Core.php");
 require_once("app/controller/HomeController.php");
 require_once("app/controller/ErrorController.php");
+require_once("app/model/Postagem.php");
 $template = file_get_contents("app/template/estrutura.php");
 
 ob_start();
