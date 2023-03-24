@@ -4,6 +4,6 @@ class ErrorController
 {
   public function index()
   {
-    echo 'pagina de erro';
+    echo 'página de erro';
   }
 }
