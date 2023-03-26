@@ -4,7 +4,11 @@ class HomeController
 {
   public function index()
   {
-    // echo 'oi';
-    Postagem::selecionaTodos();
+    try {
+      $colectPostagens = Postagem::selecionaTodos();
+      var_dump($colectPostagens);
+    } catch (Exception $exception) {
+      var_dump($exception->getMessage());
+    }
   }
 }
