@@ -17,7 +17,14 @@ class Core
     if (!class_exists($controller)) {
       $controller = "ErrorController";
     }
-    // echo $controller;
-    call_user_func_array(array(new $controller, $acao), array());
+
+    if (isset($getURL["id"]) && ($getURL['id'] != null)) {
+      $id = $getURL["id"];
+    } else {
+      $id = null;
+    }
+
+    // var_dump($id);
+    call_user_func_array(array(new $controller, $acao), array($id));
   }
 }

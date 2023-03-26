@@ -14,8 +14,8 @@
     <div id="topo">
       <header>
         <nav>
-          <a href="">Home</a>
-          <a href="">Sobre</a>
+          <a href="http://localhost:8080/php_serio/aula_rafael_capoani/mvc_crud/">Home</a>
+          <a href="http://localhost:8080/php_serio/aula_rafael_capoani/mvc_crud/?pagina=sobre">Sobre</a>
         </nav>
       </header>
     </div>
