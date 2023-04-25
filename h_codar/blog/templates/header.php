@@ -21,16 +21,16 @@ include("helpers/url.php");
 
 <body>
   <header>
-    <a href="<?= $BASE_URL ?>">
+    <a href="<?= $BASE_URL ?>" id="logo">
       <img src="<?= $BASE_URL ?>/img/logo.svg" alt="">
     </a>
 
     <nav>
-      <ul>
-        <li><a href="<?= $BASE_URL ?>">Home</a></li>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="<?= $BASE_URL ?>/contato.php">Contato</a></li>
+      <ul id="navbar">
+        <li><a class="nav-link" href="<?= $BASE_URL ?>">Home</a></li>
+        <li><a class="nav-link" href="#">Categorias</a></li>
+        <li><a class="nav-link" href="#">Sobre</a></li>
+        <li><a class="nav-link" href="<?= $BASE_URL ?>/contato.php">Contato</a></li>
       </ul>
     </nav>
   </header>
