@@ -2,6 +2,7 @@
 include_once("config/url.php");
 include_once("config/process.php");
 
+$printMsg = "";
 if (isset($_SESSION['msg'])) {
   $printMsg = $_SESSION['msg'];
   //para limpar a mensagem de sessão quando a página for recarregada
