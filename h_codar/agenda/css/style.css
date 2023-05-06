@@ -36,6 +36,10 @@
   color: #007bff;
 }
 
+.delete-form {
+  display: inline-block;
+}
+
 .delete-btn {
   border: none;
   padding: 0;

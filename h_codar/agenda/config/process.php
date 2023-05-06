@@ -54,6 +54,23 @@ if (!empty($data)) {
       $error = $e->getMessage();
       echo "Erro: $error";
     }
+  } else if ($data["type"] === "delete") {
+
+
+    $id = $data["id"];
+
+    $query = "DELETE FROM contacts where id = :id";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":id", $id);
+
+    try {
+      $stmt->execute();
+      $_SESSION["msg"] = "Contato deletado!";
+    } catch (PDOException $e) {
+      //erro na conexão
+      $error = $e->getMessage();
+      echo "Erro: $error";
+    }
   }
 
 
