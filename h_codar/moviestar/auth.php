@@ -20,7 +20,7 @@
       </div>
       <div class="col-md-4" id="register-container">
         <h2>Criar Conta</h2>
-        <form action="" method="post">
+        <form action="<?= $BASE_URL ?>auth_process.php" method="post">
           <input type="hidden" value="register" name="type">
           <div class="form-group mt-2">
             <label for="email">E-mail:</label>
@@ -32,7 +32,8 @@
           </div>
           <div class="form-group mt-2">
             <label for="lastName">Sobrenome:</label>
-            <input type="text" class="form-control" placeholder="Digite seu sobrenome" lastName="lastName" id="lastName">
+            <input type="text" class="form-control" placeholder="Digite seu sobrenome" lastName="lastName"
+              id="lastName">
           </div>
           <div class="form-group mt-2">
             <label for="password">Senha:</label>
@@ -40,7 +41,8 @@
           </div>
           <div class="form-group mt-2">
             <label for="confirmPassword">Confirmação de senha:</label>
-            <input type="confirmPassword" class="form-control" placeholder="Confirme sua senha" name="confirmPassword" id="confirmPassword">
+            <input type="confirmPassword" class="form-control" placeholder="Confirme sua senha" name="confirmPassword"
+              id="confirmPassword">
           </div>
           <div class="form-group mt-3">
             <input type="submit" class=" btn card-btn" value="Registrar">
