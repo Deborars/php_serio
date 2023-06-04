@@ -17,16 +17,25 @@ class Message
     if ($redirect != "back") {
       header("Location: $this->url" . $redirect);
     } else {
-      //pega a ultima url com o usuario acesso $_SERVER["HTTP_REFERER"]
-      //nesse caso será auth.php
+      //pega a ultima url que o usuario acessou $_SERVER["HTTP_REFERER"] nesse caso será auth.php
       header("Location:" . $_SERVER["HTTP_REFERER"]);
     }
   }
 
   public function getMessage()
   {
+    if (!empty($_SESSION["msg"])) {
+      return [
+        "msg" => $_SESSION["msg"],
+        "type" => $_SESSION["type"]
+      ];
+    } else {
+      return false;
+    }
   }
   public function clearMessage()
   {
+    $_SESSION['msg'] = "";
+    $_SESSION['type'] = "";
   }
 }

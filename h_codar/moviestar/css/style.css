@@ -70,16 +70,20 @@
   text-align: center;
 }
 
-.msg.error {
+.error {
   color: #842029;
   background-color: #F8D7DA;
   border-color: #F5C2C7;
 }
 
-.msg.success {
+.success {
   color: #0F5132;
   background-color: #D1E7DD;
   border-color: #BADBCC;
+}
+
+body {
+  background-color: #000 !important;
 }
 
 /* Home */
