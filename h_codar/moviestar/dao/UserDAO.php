@@ -45,6 +45,24 @@ class UserDAO implements UserDAOInterface
   public function authenticateUser($email, $password)
   {
   }
+
+  public function findByEmail($email)
+  {
+    if ($email != "") {
+
+      $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
+      $stmt->bindParam(":email", $email);
+      $stmt->execute();
+
+      if ($stmt->rowCount() > 0) {
+        $data = $stmt->fetch();
+        $user = $this->buildUser($data);
+      } else {
+        return false;
+      }
+    } else {
+    }
+  }
   public function findById($id)
   {
   }

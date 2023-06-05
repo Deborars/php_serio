@@ -24,25 +24,25 @@
           <input type="hidden" value="register" name="type">
           <div class="form-group mt-2">
             <label for="email">E-mail:</label>
-            <input type="email" class="form-control" placeholder="Digite seu e-mail" name="email" id="email">
+            <input type="email" class="form-control" required title="Por favor, digite um email válido"
+              placeholder="Digite seu e-mail" name="email" id="email">
           </div>
           <div class="form-group mt-2">
             <label for="name">Nome:</label>
             <input type="text" class="form-control" placeholder="Digite seu nome" name="name" id="name">
           </div>
           <div class="form-group mt-2">
-            <label for="lastName">Sobrenome:</label>
-            <input type="text" class="form-control" placeholder="Digite seu sobrenome" lastName="lastName"
-              id="lastName">
+            <label for="lastname">Sobrenome:</label>
+            <input type="text" class="form-control" placeholder="Digite seu sobrenome" name="lastname" id="lastname">
           </div>
           <div class="form-group mt-2">
             <label for="password">Senha:</label>
             <input type="password" class="form-control" placeholder="Digite sua senha" name="password" id="password">
           </div>
           <div class="form-group mt-2">
-            <label for="confirmPassword">Confirmação de senha:</label>
-            <input type="confirmPassword" class="form-control" placeholder="Confirme sua senha" name="confirmPassword"
-              id="confirmPassword">
+            <label for="confirmpassword">Confirmação de senha:</label>
+            <input type="password" class="form-control" placeholder="Confirme sua senha" name="confirmpassword"
+              id="confirmpassword">
           </div>
           <div class="form-group mt-3">
             <input type="submit" class=" btn card-btn" value="Registrar">
