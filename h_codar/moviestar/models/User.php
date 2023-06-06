@@ -31,7 +31,7 @@ interface UserDAOInterface
   public function create(User $user, $authUser = false);
   public function update(User $user);
   public function verifyToken($protected = false);
-  public function setTokenToSesssion($token, $redirect = true);
+  public function setTokenToSession($token, $redirect = true);
   public function authenticateUser($email, $password);
   public function findById($id);
   public function findByToken($token);
