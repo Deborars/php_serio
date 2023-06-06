@@ -10,6 +10,18 @@ class User
   public $image;
   public $bio;
   public $token;
+
+  public function generateToken()
+  {
+    //bin2hex gera uma string e random_bytes gera outra string com 50 caracteres
+    //com essas funções iremos gerar o token que a chance de ter dois tokens com a mesma sequência é praticamente nula
+    return bin2hex(random_bytes(50));
+  }
+
+  public function generatePassword($password)
+  {
+    return password_hash($password, PASSWORD_DEFAULT);
+  }
 }
 
 
