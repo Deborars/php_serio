@@ -2,6 +2,8 @@
 require_once("globals.php");
 require_once("db.php");
 require_once("models/Message.php");
+require_once("dao/UserDAO.php");
+
 
 $message = new Message($BASE_URL);
 
@@ -12,6 +14,12 @@ if (!empty($flassMessage["msg"])) {
   $message->clearMessage();
 }
 
+$userDAO = new UserDAO($conn, $BASE_URL);
+
+$userData = $userDAO->verifyToken(false);
+
+// print_r($userData);
+// // exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">

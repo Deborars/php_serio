@@ -55,9 +55,29 @@ class UserDAO implements UserDAOInterface
   }
   public function verifyToken($protected = false)
   {
+    if (!empty($_SESSION["token"])) {
+
+      //pega o token da session
+      $token = $_SESSION["token"];
+
+      $user = $this->findByToken($token);
+
+      if ($user) {
+        return $user;
+      } else {
+        //redireciona o usuario não autenticado
+        $this->message->setMessage("Faça a autenticação para acessar esta página", "error", "index.php");
+      }
+    } else {
+      return false;
+    }
   }
   public function setTokenToSession($token, $redirect = true)
   {
+
+    //salvar token na session
+    $_SESSION["token"] = $token;
+
     if ($redirect) {
       //redireciona para o perfil do usuario
       $this->message->setMessage("Seja bem-vindo!", "success", "editprofile.php");
@@ -78,10 +98,13 @@ class UserDAO implements UserDAOInterface
       if ($stmt->rowCount() > 0) {
         $data = $stmt->fetch();
         $user = $this->buildUser($data);
+
+        return $user;
       } else {
         return false;
       }
     } else {
+      return false;
     }
   }
   public function findById($id)
@@ -89,6 +112,23 @@ class UserDAO implements UserDAOInterface
   }
   public function findByToken($token)
   {
+    if ($token != "") {
+
+      $stmt = $this->conn->prepare("SELECT * FROM users WHERE token = :token");
+      $stmt->bindParam(":token", $token);
+      $stmt->execute();
+
+      if ($stmt->rowCount() > 0) {
+        $data = $stmt->fetch();
+        $user = $this->buildUser($data);
+
+        return $user;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
   public function changePassword(User $user)
   {
