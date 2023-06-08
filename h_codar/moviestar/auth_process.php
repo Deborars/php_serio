@@ -65,4 +65,16 @@ if ($type === "register") {
 
   //aqui é a autenticação do usuario
 } elseif ($type === "login") {
+  $email = filter_input(INPUT_POST, "email");
+  $password = filter_input(INPUT_POST, "password");
+
+  //tenta autenticar usuario
+  if ($userDAO->authenticateUser($email, $password)) {
+  } else {
+    //redireciona o usuario, caso não conseguir autenticar
+    $message->setMessage("Usuário e/ou senha incorretos.", "error", "back");
+  }
+} else {
+  //caso o usuario tente colocar um type invalido, poderia ser uma tentativa de acesso maliciosa
+  $message->setMessage("Informações inválidas", "error", "index.php");
 }
