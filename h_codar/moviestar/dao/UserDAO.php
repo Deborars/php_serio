@@ -50,8 +50,32 @@ class UserDAO implements UserDAOInterface
       $this->setTokenToSession($user->token);
     }
   }
-  public function update(User $user)
+  public function update(User $user, $redirect = true)
   {
+    $stmt = $this->conn->prepare("UPDATE users SET 
+      name = :name,
+      lastname = :lastname,
+      email = :email,
+      image = :image,
+      bio = :bio,
+      token = :token
+      where id = :id
+    ");
+
+    $stmt->bindParam(":name", $user->name);
+    $stmt->bindParam(":lastname", $user->lastname);
+    $stmt->bindParam(":email", $user->email);
+    $stmt->bindParam(":image", $user->image);
+    $stmt->bindParam(":bio", $user->bio);
+    $stmt->bindParam(":token", $user->token);
+    $stmt->bindParam(":id", $user->id);
+
+    $stmt->execute();
+
+    if ($redirect) {
+      //redireciona para o perfil do usuario
+      $this->message->setMessage("Dados atualizados com sucesso!", "success", "editprofile.php");
+    }
   }
   public function verifyToken($protected = false)
   {
@@ -94,11 +118,11 @@ class UserDAO implements UserDAOInterface
         //gerar um token e inserir na session
         $token = $user->generateToken();
 
-        $this->setTokenToSession($token);
+        $this->setTokenToSession($token, false);
 
         //atualizar token no usuario
         $user->token = $token;
-        $this->update($user);
+        $this->update($user, false);
 
         return true;
       } else {
