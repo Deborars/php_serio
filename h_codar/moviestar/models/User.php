@@ -11,6 +11,11 @@ class User
   public $bio;
   public $token;
 
+  public function getFullName($user)
+  {
+    return $user->name . " " . $user->lastname;
+  }
+
   public function generateToken()
   {
     //bin2hex gera uma string e random_bytes gera outra string com 50 caracteres
