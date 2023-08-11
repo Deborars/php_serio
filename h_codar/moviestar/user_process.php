@@ -38,6 +38,7 @@ if ($type === "update") {
   //upload da imagem
   if (isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
 
+
     $image = $_FILES["image"];
     $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
     $jpgArray = ["image/jpeg", "image/jpg"];
@@ -45,12 +46,13 @@ if ($type === "update") {
     //checagem de tipo de imagem
     if (in_array($image["type"], $imageTypes)) {
       //checar se jpg
-      if (in_array($image, $jpgArray)) {
+      if (in_array($image["type"], $jpgArray)) {
         $imageFile = imagecreatefromjpeg($image["tmp_name"]);
         //imagem é png
       } else {
         $imageFile = imagecreatefrompng($image["tmp_name"]);
       }
+
 
       $imageName = $user->imageGenerateName();
 
