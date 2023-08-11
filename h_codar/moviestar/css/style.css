@@ -224,6 +224,10 @@ body {
 }
 
 .form-control.disabled {
+  background-color: #bbb;
+}
+
+.form-control.disabled {
   background-color: #BBB;
 }
 
@@ -236,6 +240,11 @@ body {
 #review-form .card-btn,
 #edit-movie-form .card-btn {
   width: auto;
+
+}
+
+.card-btn {
+  margin-top: 30px;
 }
 
 /* Profile */
