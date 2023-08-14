@@ -19,7 +19,7 @@ if ($type === "update") {
   //resgata dados do usuario
   $userData = $userDAO->verifyToken();
 
-  //receber dados do post
+  //receber dados do input
   $name = filter_input(INPUT_POST, "name");
   $lastname = filter_input(INPUT_POST, "lastname");
   $email = filter_input(INPUT_POST, "email");
