@@ -9,6 +9,7 @@ require_once("dao/MovieDAO.php");
 
 $message = new Message($BASE_URL);
 $userDAO = new userDAO($conn, $BASE_URL);
+$MovieDAO = new MovieDAO($conn, $BASE_URL);
 
 //resgata o tipo do formulario
 $type = filter_input(INPUT_POST, "type");
@@ -35,6 +36,7 @@ if ($type === "create") {
     $movie->trailer = $trailer;
     $movie->category = $category;
     $movie->length = $length;
+    $movie->users_id = $userData->id;
 
     //upload de imagem do filme
     //verifico se o files ["image"] foi iniciado e se possui o nome da imagem temporaria
@@ -69,7 +71,7 @@ if ($type === "create") {
       }
     }
 
-    $movieDao->create($movie);
+    $MovieDAO->create($movie);
   } else {
     $message->setMessage("Você precisa adicionar pelo menos: título, descrição e categoria.", "error", "back");
   }
