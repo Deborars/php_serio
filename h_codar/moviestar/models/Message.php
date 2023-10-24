@@ -17,7 +17,7 @@ class Message
     if ($redirect != "back") {
       header("Location: $this->url" . $redirect);
     } else {
-      //pega a ultima url que o usuario acessou $_SERVER["HTTP_REFERER"] nesse caso será auth.php
+      //pega a ultima url que o usuario acessou $_SERVER["HTTP_REFERER"] 
       header("Location:" . $_SERVER["HTTP_REFERER"]);
     }
   }
