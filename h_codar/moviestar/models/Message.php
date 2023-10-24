@@ -15,10 +15,10 @@ class Message
     $_SESSION['type'] = $type;
 
     if ($redirect != "back") {
-      header("Location: $this->url" . $redirect);
+      echo "<script>window.location.href='" . $this->url . $redirect . "'</script>";
     } else {
       //pega a ultima url que o usuario acessou $_SERVER["HTTP_REFERER"] 
-      header("Location:" . $_SERVER["HTTP_REFERER"]);
+      echo "<script>window.location.href='" . $_SERVER["HTTP_REFERER"] . "'</script>";
     }
   }
 
