@@ -1,7 +1,3 @@
-Criando as relações das entidades, usando o workbench.
-
-![alt text]("diagrama_er/diagrama_er.png")
-
 # Concluindo o projeto Moviestar.
 Este projeto foi feito em orientação objeto com PHP seguindo o pattern DAO. Aonde temos as classes definidas no arquivo model e suas respectivas interfaces.
 Nos arquivos com o nome DAO foram construidas as querys para consumir os parâmetros da View e devolver as informações após seus processamentos junto ao banco.
